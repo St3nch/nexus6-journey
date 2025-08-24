@@ -1,0 +1,51 @@
+{
+  "name": "Ax X Monitor (Skeleton)",
+  "nodes": [
+    {
+      "name": "Cron",
+      "type": "n8n-nodes-base.cron",
+      "parameters": {
+        "triggerTimes": {
+          "item": [
+            {
+              "mode": "everyMinute",
+              "minutesInterval": 15
+            }
+          ]
+        }
+      }
+    },
+    {
+      "name": "Fetch Topics",
+      "type": "n8n-nodes-base.httpRequest",
+      "parameters": {
+        "url": "https://api.example.com/x/search?q={{$json.topic}}",
+        "responseFormat": "json"
+      }
+    },
+    {
+      "name": "Draft Generator",
+      "type": "n8n-nodes-base.function",
+      "parameters": {
+        "functionCode": "return [{text:`Ax draft for ${$json.title}`}];"
+      }
+    },
+    {
+      "name": "Manual Queue",
+      "type": "n8n-nodes-base.googleSheets",
+      "parameters": {
+        "operation": "append",
+        "sheetId": "ADD_ME"
+      }
+    },
+    {
+      "name": "Post to X",
+      "type": "n8n-nodes-base.httpRequest",
+      "parameters": {
+        "url": "https://api.twitter.com/2/tweets",
+        "method": "POST"
+      }
+    }
+  ],
+  "connections": {}
+}

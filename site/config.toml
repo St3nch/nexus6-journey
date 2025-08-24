@@ -1,0 +1,14 @@
+baseURL = "/"
+languageCode = "en-us"
+title = "N6 Log — Chaz + Axlon"
+theme = "terminal"
+paginate = 10
+
+[params]
+  centerTheme = true
+  themeColor = "green"
+  showMenuItems = 5
+  showLanguageSelector = false
+
+[markup.goldmark.renderer]
+  unsafe = true

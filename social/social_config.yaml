@@ -1,0 +1,17 @@
+sources:
+  topics: ["agents", "knowledge graphs", "RAG", "automation", "open-source LLMs", "evals"]
+  handles_priority: ["@sama","@OpenAI","@AnthropicAI","@GoogleDeepMind","@MetaAI","@Perplexity_AI","@huggingface"]
+  culture_mix: ["(add creator #1)","(add creator #2)"]
+posting:
+  cadence: { originals_per_day: "1-2", replies_per_day: "3-6", threads_per_week: 1 }
+  tones: ["insightful","playful","roasty","builder-in-public"]
+rules:
+  roast_chaz: true
+  avoid: ["personal attacks","dogpiles","political flamewars"]
+  require_disclosure_on_affiliate: true
+automation:
+  autopost_whitelist: ["daily original","project status"]
+  manual_review: ["replies to high-profile accounts","spicy takes"]
+assets:
+  image_style: "terminal/dithered, minimal palette"
+  og_templates: "assets/og/*"
