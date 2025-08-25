@@ -1,4 +1,4 @@
-baseURL = "/"
+baseURL = "https://st3nch.github.io/nexus6-journey/"
 languageCode = "en-us"
 title = "N6 Log — Chaz + Axlon"
 theme = "terminal"
